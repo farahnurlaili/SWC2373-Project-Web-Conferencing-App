@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf8">
+
+   <title>Space Widget</title>
+   <link rel="stylesheet" href="https://code.s4d.io/widget-space/production/main.css">
+
+   <script src="https://code.s4d.io/widget-space/production/bundle.js"></script>
+</head>
+
+<body>
+
+   <div id='space' class="webexteams-widget" style="width: 750px; height: 1000px;"
+      data-access-token='NWM0ZThkN2EtOGJiYy00M2NmLWEwNTQtNzNjNDhmMTE2MjJhYmZhN2VjYmMtMmZj_P0A1_346e751c-7bdb-491d-9858-1355bbf861ac' data-toggle="webex-space" data-destination-type="roomId"
+      data-destination-id='Y2lzY29zcGFyazovL3VybjpURUFNOnVzLXdlc3QtMl9yL1JPT00vNDI1MWY3MDAtN2IxZC0xMWVlLWI3MTgtYjlhYTUzNGIzNDRl' data-initial-activity="message" />
+
+   <script>
+      // Update token if set as a query parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const token = urlParams.get('token');
+
+      if (token) {
+         console.log('injecting token from query parameter...')
+         const widget = document.getElementById('space');
+         widget.setAttribute("data-access-token", token);
+      }
+   </script>
+
+</body>
+
+</html>
